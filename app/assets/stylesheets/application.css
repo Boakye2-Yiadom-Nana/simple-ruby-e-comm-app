@@ -1,0 +1,368 @@
+/* ===============================
+   Global Styles
+   =============================== */
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  margin: 0;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ===============================
+   Navigation
+   =============================== */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #0070f3;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background: #0070f3;
+  color: #fff;
+}
+
+/* ===============================
+   Product Section
+   =============================== */
+section.product {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 1.5rem;
+}
+
+section.product img {
+  border-radius: 12px;
+  width: 100%;         /* take full width of container */
+  max-width: 400px;    /* fixed maximum width */
+  height: 300px;       /* fixed height */
+  object-fit: cover;   /* crop to fit while keeping aspect ratio */
+  display: block;
+}
+
+
+/* ===============================
+   Product Info
+   =============================== */
+section.product-info {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section.product-info h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #222;
+}
+
+section.product-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===============================
+   Buttons & Links
+   =============================== */
+section.product-info a,
+section.product-info form button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+section.product-info a {
+  background: #0070f3;
+  color: #fff;
+  text-decoration: none;
+}
+
+section.product-info a:hover {
+  background: #005bb5;
+}
+
+section.product-info form button {
+  background: #e63946;
+  color: #fff;
+}
+
+section.product-info form button:hover {
+  background: #c71c2c;
+}
+
+/* ===============================
+   Alerts & Notices
+   =============================== */
+.notice {
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 768px) {
+  section.product {
+    flex-direction: column;
+  }
+
+  section.product img,
+  section.product-info {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+/* ===============================
+   Product Form Styling
+   =============================== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #0070f3;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,112,243,0.2);
+}
+
+.form-actions {
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: #0070f3;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #005bb5;
+}
+
+/* ============================
+   Products index — A-game styles
+   ============================ */
+
+/* Page wrapper */
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.75rem 0;
+  color: #111827; /* dark slate */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Top action (New product link) */
+a[href$="new_product_path"], /* fallback selector - optional */
+a:where(.new-product, .btn-new) {
+  display: inline-block;
+  background: linear-gradient(180deg,#0ea5e9,#0369a1);
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(3,105,161,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  margin-bottom: 1rem;
+}
+
+/* Safe fallback: style the first link after the H1 if it is the New product link */
+h1 + a {
+  /* keep same styling for safety */
+  display: inline-block;
+  background: linear-gradient(180deg,#0ea5e9,#0369a1);
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(3,105,161,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  margin-bottom: 1rem;
+}
+
+a.btn-new:hover,
+h1 + a:hover,
+a:where(.new-product, .btn-new):focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(3,105,161,0.16);
+  outline: none;
+}
+
+/* Products grid */
+#products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Card for each product (targets your current structure: #products > div) */
+#products > div {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+  transition: transform .15s ease, box-shadow .15s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 68px;
+  border: 1px solid rgba(15,23,42,0.03);
+}
+
+/* Hover / focus states for card */
+#products > div:hover,
+#products > div:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(15,23,42,0.06);
+}
+
+/* Product link inside card */
+#products a {
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 0.1rem 0;
+}
+
+/* Make the whole card clickable on keyboard (if you wrap link around card) */
+#products a:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  border-radius: 8px;
+}
+
+/* Optional small meta / subtitle (if you add later) */
+#products .meta {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  #products { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 820px) {
+  #products { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  #products { grid-template-columns: 1fr; }
+  #products > div { padding: 0.85rem; }
+  h1 { font-size: 1.4rem; }
+}
+
+/* Tiny utility: subtle divider between items when stacked */
+#products > div + div {
+  /* no-op: kept for future tweaks */
+}
+
+/* Accessibility: reduce motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #products > div,
+  #products a,
+  a.btn-new,
+  h1 + a {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+.product-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  max-width: 100%;
+  height: 111px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-link {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.product-link:hover {
+  color: #2563eb;
+}

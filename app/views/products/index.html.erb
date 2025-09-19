@@ -1,0 +1,17 @@
+<h1>Products</h1>
+
+<%= link_to "New product", new_product_path, class: "btn-new" if authenticated? %>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <% if product.featured_image.attached? %>
+        <%= link_to product do %>
+          <%= image_tag product.featured_image, class: "product-image" %>
+        <% end %>
+      <% end %>
+      
+      <%= link_to product.name, product, class: "product-link" %>
+    </div>
+  <% end %>
+</div>

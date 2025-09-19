@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+
+  <body style="font-family: Arial, Helvetica, sans-serif; padding: 20px; background-color: #f9fafb; color: #333;">
+    <%= yield %>
+
+    <hr style="margin-top: 2rem; border: none; border-top: 1px solid #ddd;">
+    <p style="font-size: 0.85rem; color: #777;">
+      You are receiving this email because you subscribed to product updates.<br>
+      <%= link_to "Unsubscribe", unsubscribe_url(token: @subscriber.generate_token_for(:unsubscribe)), style: "color: #e63946;" %>
+    </p>
+  </body>
+</html>
